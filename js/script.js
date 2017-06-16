@@ -1,11 +1,11 @@
 //business logic
-var player1 = "";
-var player2 = "";
+var player1 = ""; //stores players name
+var player2 = ""; //stores playrs name
 
 var throwdice = function() {
-  return Math.floor(6 * Math.random()) + 1;
+  return Math.floor(6 * Math.random()) + 1; //returns a number greater than one and less than 6
 }
-
+//turn function
 function Player(turn) {
   this.roll = 0;
   this.tempscore = 0;
@@ -68,6 +68,7 @@ $(document).ready(function() {
     player1 = new Player(true);
     player2 = new Player(false);
     $(".player-console").show();
+    // hide the start menu
     $(".start-menu").hide();
 
     var player1Name = $(".player1Name").val();
@@ -94,6 +95,7 @@ $(document).ready(function() {
 
     $(".start-menu").show();
   });
+  // throw the dice function
 
   $("button#player1-roll").click(function(event) {
     player1.roll = throwdice();
@@ -108,7 +110,7 @@ $(document).ready(function() {
     player2.rollone();
     $("#round-total-2").text(player2.tempscore);
   });
-
+  // hold your score function
   $("button#player1-hold").click(function(event) {
     player1.hold();
     $("#total-score-1").text(player1.totalscore);

@@ -34,13 +34,13 @@ Player.prototype.hold = function() {
 }
 
 // // changing turn
-// Player.prototype.changeturn = function () {
-//   if (this.roll ===1) {
-//     this.turn = false;
-//   } else {
-//     this.turn = true;
-//   }
-// }
+Player.prototype.changeturn = function() {
+  if (this.roll === 1) {
+    this.turn = false;
+  } else {
+    this.turn = true;
+  }
+}
 // check for 100
 Player.prototype.winnerCheck = function() {
   if (this.totalscore >= 100) {
